@@ -1,0 +1,22 @@
+<?php
+
+require 'index.php';
+
+$nome = $_POST("name");
+$cpf = $_POST("cpf");
+$email = $_POST("email");
+$curso = $_POST("course");
+$data = $_POST("completionDate");
+
+$sql = "insert into alunonr35 (nome, cpf, email, curso, data) values ('$nome', '$cpf', '$email', '$course', '$completionDate')";
+
+$result = mysql_query($con, $sql);
+
+if($result == true){
+    echo "Cadastrodo com Sucesso";
+}
+      else{
+          echo "Erro ao Cadstrar";
+}
+
+?>
