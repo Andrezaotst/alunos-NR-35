@@ -1,22 +1,24 @@
 <?php
-
 require 'index.php';
 
-$nome = $_POST("name");
-$cpf = $_POST("cpf");
-$email = $_POST("email");
-$curso = $_POST("course");
-$data = $_POST("completionDate");
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nome = $_POST["name"];
+    $cpf = $_POST["cpf"];
+    $email = $_POST["email"];
+    $curso = $_POST["course"];
+    $data = $_POST["completionDate"];
 
-$sql = "insert into alunonr35 (nome, cpf, email, curso, data) values ('$nome', '$cpf', '$email', '$course', '$completionDate')";
+    $sql = "INSERT INTO alunonr35 (nome, cpf, email, curso, data)
+            VALUES ('$nome', '$cpf', '$email', '$curso', '$data')";
 
-$result = mysql_query($con, $sql);
+    $result = mysqli_query($con, $sql);
 
-if($result == true){
-    echo "Cadastrodo com Sucesso";
+    if ($result === true) {
+        echo "Cadastrado com sucesso";
+    } else {
+        echo "Erro ao cadastrar: " . mysqli_error($con);
+    }
+} else {
+    echo "Acesso inválido — favor enviar os dados via formulário.";
 }
-      else{
-          echo "Erro ao Cadstrar";
-}
-
 ?>
