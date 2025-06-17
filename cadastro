@@ -106,7 +106,8 @@
             const course = document.getElementById('course').value;
             const completionDate = document.getElementById('completionDate').value;
 
-                       document.getElementById('message').textContent = 'Aluno cadastrado com sucesso!';
+            
+            document.getElementById('message').textContent = 'Aluno cadastrado com sucesso!';
 
                         setTimeout(() => {
                 const certificateUrl = `certificate.html?name=${encodeURIComponent(name)}&course=${encodeURIComponent(course)}&date=${encodeURIComponent(completionDate)}`;
