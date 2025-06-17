@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Alunos</title>
+	<title>Cadastro de Alunos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,14 +66,11 @@
     </style>
 </head>
 
-    <body>
-        <?php include("tabelaalunosnr35.php"); ?>
-    </body>
-	
-<body>
-    <div class="container">
+<body>    
+        
+        <div class="container">
         <h1>Cadastro de Alunos</h1>
-        <form id="registrationForm">
+        <form action="inserir_tabelaalunosnr35.php" method="POST">
             <div class="form-group">
                 <label for="name">Nome Completo:</label>
                 <input type="text" id="name" name="name" required>
@@ -104,6 +101,7 @@
             event.preventDefault(); // Prevent default form submission
 
             const name = document.getElementById('name').value;
+			const cpf = document.getElementById('cpf').value;
             const email = document.getElementById('email').value;
             const course = document.getElementById('course').value;
             const completionDate = document.getElementById('completionDate').value;
