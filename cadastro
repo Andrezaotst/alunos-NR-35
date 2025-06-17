@@ -106,14 +106,9 @@
             const course = document.getElementById('course').value;
             const completionDate = document.getElementById('completionDate').value;
 
-            // In a real application, you would send this data to a server
-            // For this example, we'll just display a message and simulate certificate generation
+                       document.getElementById('message').textContent = 'Aluno cadastrado com sucesso!';
 
-            document.getElementById('message').textContent = 'Aluno cadastrado com sucesso!';
-
-            // Simulate redirecting to a certificate page with the data
-            // In a real scenario, the server would generate and provide the certificate
-            setTimeout(() => {
+                        setTimeout(() => {
                 const certificateUrl = `certificate.html?name=${encodeURIComponent(name)}&course=${encodeURIComponent(course)}&date=${encodeURIComponent(completionDate)}`;
                 window.location.href = certificateUrl;
             }, 1500);
